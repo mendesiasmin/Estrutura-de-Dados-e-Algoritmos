@@ -14,11 +14,7 @@ struct index {
 
 typedef struct index Index;
 
-
-
-
-
-bool sequentialSearch(vector<int> &list, vector<Index> &table, int search_value);
+bool sequential_search(vector<int> &list, vector<Index> &table, int search_value);
 vector<Index> generate_index_table(vector<int> &list); 
 bool valid_entry(int argc);
 void create_list(vector<int> &list, int number_elements);
@@ -35,7 +31,8 @@ int main(int argc, char *argv[]) {
   vector<int> list(vector_size);
   create_list(list, vector_size);
   print_list(list);
-  generate_index_table(list);
+  vector<Index> table_index = generate_index_table(list);
+  sequential_search(list, table_index, 2);
   return 0;
 }
 
@@ -63,9 +60,9 @@ void create_list(vector<int> &list, int number_elements) {
 
 void print_list(vector<int> list) {
   for(unsigned int i = 0; i < list.size(); i++) {
-    printf("%d ", list[i]);
+    printf("%d[%d] ", i, list[i]);
   }
-  printf("\n");
+  printf("\n\n");
 }
 
 
@@ -79,23 +76,26 @@ vector<Index> generate_index_table(vector<int> &list) {
   }
 
   for(unsigned int i = 0; i<table.size(); i++) {
-    cout << table[i].index << ' ';
-    cout << table[i].key << endl;
+    printf("%d[%d - %d] ", i, table[i].index, table[i].key);
   }
+  cout << endl << endl;
   return table;
  }
 
 
-bool sequentialSearch(vector<int> &list, vector<Index> &table, int search_value) {
-  
+bool sequential_search(vector<int> &list, vector<Index> &table, int search_value) {
+  cout << "Search: " << search_value << endl;
+
   unsigned int t = 0;
-  while(search_value > table[t++].key && t != table.size());
+  while(search_value > table[t].key && t < table.size()){
+    t++;
+  }
 
-  int l = table[t-1].index;
-  while(search_value != list[l++] && l != table[t].index);
+  int l = t != 0 ? table[t-1].index : 0;
+  while(search_value != list[l] && l != table[t].index){
+    l++;
+  }
 
-  cout << "list[" << l << "] = " << list[l] << endl;
-  cout << "tabl[" << t << "] = " << table[t].index << " " << table[t].key  << endl;
+  cout << "Find value in " << l << " position\n";
   return true;
 }
-vector<Index> generate_index_table(vector<int> &list); 
