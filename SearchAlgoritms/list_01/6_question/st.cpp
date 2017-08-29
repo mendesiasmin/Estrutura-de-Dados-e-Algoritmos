@@ -1,3 +1,15 @@
+/*
+
+  Universidade de Brasíla - Campus Gama 2017/02
+  Estrutura de Dados e Algortimos 2 - Mauricio Serrano
+
+    Lista 01 - Questão 06: Busca por interpolção
+
+    Iasmin Santos Mendes, 14/0041940
+    Francisco Wallacy Coutinho Braz, 15/0059329
+
+*/
+
 #include <iostream>
 #include <vector>
 #include <cstdlib>
