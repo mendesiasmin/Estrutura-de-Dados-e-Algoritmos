@@ -1,0 +1,34 @@
+
+Rule: Always add the student with the maximum number of overlaped shifts to add to comiteee
+
+// S = Set of shifts of each student
+// n = number of shifts
+// C = Comitee set
+
+Comitee(S, n)
+    
+    // C comitee set
+
+    while S is not empty 
+
+        for i beginnning at 0 to (n-1)
+    
+            c = shift that overlaps the maximum number of shifts
+
+        end
+
+
+        add c to C
+        remove c and his overlapping shifts from S
+    end
+    
+    return C
+    
+
+end
+
+ 
+Justificative: To minimizes the number of students on the comitee, we must maximize
+the number of students that are supervisioned by a single supervisioner.
+
+

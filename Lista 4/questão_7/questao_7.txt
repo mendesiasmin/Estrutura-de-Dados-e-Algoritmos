@@ -1,0 +1,30 @@
+Rule: always schedule the jobs which takes more time to be finished cause it will have more time to do it. 
+
+
+
+// JOBS = job set
+// n = number of jobs and minimal PCs
+// p = processing time in the super computer
+// f = time that takes to finishes a job on the PC
+
+Schedulling_jobs(jobs, n) 
+
+   Sj // scheduled jobs
+
+   Sort jobs in decrescent order of their finishing time f
+
+   for i beginning at 0 to (n - 1)
+ 
+        schedule job(i) to Sj
+
+    end
+
+    return Sj
+end
+
+
+
+    
+    
+    
+    

@@ -1,0 +1,28 @@
+
+Given a set of n jobs, each one taking t seconds to finish and a weight w associated.
+
+// Jobs is the set of jobs to be completed
+// n is the number of total jobs
+// t is the time that a jobs takes to complete.
+// C is the acumulated time of each job. ex: C2 = C1 + t2
+
+scheduling_jobs(Jobs, n)
+
+    Sj // Scheduled jobs
+
+    sort the jobs in crescent order of (t*w);
+
+    for i begining at 0 to (n - 1)
+        
+        schedule job(i) to Sj
+
+    end 
+
+    return Sj
+end
+
+
+Justificative: The completion time Ci depends on the Ci-1 and ti, that is, Ci = Ci-1 + ti. Well, the question asks for minimizes 
+the overall sum Ci*wi, with Ci = Ci-1 + ti. At each iteration, the Ci becomes greater because it has to add Ci-1+ti. But we already know that if we have two numbers,
+for example t2 and t3. with t3 > t2 and we add some constant, in this case, Ci-1, the inequality remains. So, 
+at each iteration, we only have to find the lesser ti*wi. 

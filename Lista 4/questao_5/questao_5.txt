@@ -1,0 +1,20 @@
+
+
+// P = Positions of the house
+// n = Number of the houses
+
+
+few_bases(P, n) 
+
+    
+    
+            
+        
+         
+        
+
+        
+
+        
+        
+        
