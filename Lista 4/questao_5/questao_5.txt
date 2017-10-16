@@ -1,13 +1,29 @@
-
+Rule: Whenever that finds a house place a base 4 miles away far from it then walks more 4 miles.
+Repeat the procedure by finding houses ahead. 
 
 // P = Positions of the house
-// n = Number of the houses
 
 
-few_bases(P, n) 
+few_bases(P,end) 
 
+   int i = 0
     
-    
+   while( p < end) // while p not reaches road end
+
+        
+        p <-- P[i] // position of the house i
+
+        p <-- p + 8 // walks 8 miles
+        
+        bases++ // place a base 4 miles behind
+
+        while ( P[++i] < p ) // Places i in the next house after p
+
+   end      
+
+   return bases
+
+end
             
         
          

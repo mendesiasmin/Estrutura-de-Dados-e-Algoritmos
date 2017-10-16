@@ -10,7 +10,7 @@ scheduling_jobs(Jobs, n)
 
     Sj // Scheduled jobs
 
-    sort the jobs in crescent order of (t*w);
+    sort the jobs in decrescent order of (t*w);
 
     for i begining at 0 to (n - 1)
         
@@ -22,7 +22,5 @@ scheduling_jobs(Jobs, n)
 end
 
 
-Justificative: The completion time Ci depends on the Ci-1 and ti, that is, Ci = Ci-1 + ti. Well, the question asks for minimizes 
-the overall sum Ci*wi, with Ci = Ci-1 + ti. At each iteration, the Ci becomes greater because it has to add Ci-1+ti. But we already know that if we have two numbers,
-for example t2 and t3. with t3 > t2 and we add some constant, in this case, Ci-1, the inequality remains. So, 
-at each iteration, we only have to find the lesser ti*wi. 
+
+Rule used: Choose the jobs with the greater wi*ti first. 
