@@ -1,0 +1,39 @@
+Francisco Wallacy Coutinho Braz 15/0059329
+Iasmin Santos Mendes 14/0041940
+
+
+
+a) O seguinte grafo iria gerar uma solução incorreta.
+
+7-8-7-3-6
+
+Explicação: O algoritmo iria primeiro selecionar o nó 8, e iria deletar seus vizinhos que neste caso são 7 e 7. Logo em seguida seria escolhido o no 6 e o 3 seria deletado. A solução obtida por esse algoritmo seria então 8+6 = 14, que seria melhor que a solução ótimo que nesse caso é 7-7-6, que resultaria 7+7+6 = 20.
+
+b) Tomando o exemplo 1-8-6-3-6. S1 seria o conjunto com os nós 1,6,6. E S2 seria 8,3. O algoritmo iria determinar que S1 teria o maior peso, com 11, porém a solução ótima deveria ser o subconjunto 8-6, que resulta em um peso total de 14.
+
+c) 
+
+Seja OPT(n) o peso do maior subconjunto independente dos nós de 1 à n.
+
+OPT(n) = MAX(Wi+OPT(n-2),OPT(n-1))
+
+
+   
+maior_peso(n)
+ 
+    se n igual a 0 
+        retorne 0
+    caso contrário
+        retorne o máximo entre MAX(W(n)+maior_peso(n-2),maior_peso(n-1))
+
+   
+    
+        
+         
+         
+
+   
+    
+        
+
+

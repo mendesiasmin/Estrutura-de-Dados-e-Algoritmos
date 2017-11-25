@@ -1,0 +1,37 @@
+Francisco Wallacy Coutinho Braz 15/0059329
+Iasmin Santos Mendes 14/0041940
+
+
+a)
+
+v
+ 1 2 3 4 5 6
+1  x
+
+2    x
+
+3          x
+
+4        x
+
+5          x
+
+Esse exemplo demonstra que o algoritmo iria falhar em encontrar a solução ótima, uma vez que que em dado momento seria escolhido a aresta de v3 até v6, porém o resultado não seria o maior caminho.
+
+
+b) O algoritmo que gera a solução ótima para o dado problema nasce das seguintes premissas:
+
+A maior distância do primeiro nó v1 até um dado nó v(n) pode ser dado por 1 + a maior das distâncias de v1 até todos os nós que possuem arestas para v(n).
+
+
+Algoritmo:
+
+maior_distância(n) // Maior distância de v1 até vn
+
+    se n for 1 
+        retorne 0
+    caso contrário 
+       retorne 1 + maior_distância(|x:x são todos os nós que possuem arestas para n)
+
+
+

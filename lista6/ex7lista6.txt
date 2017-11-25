@@ -1,0 +1,93 @@
+Francisco Wallacy Coutinho Braz 15/0059329
+Iasmin Santos Mendes 14/0041940
+
+
+Seja p(n) o preço do estoque no dia n
+
+
+(1) Se o dia n foi escolhido para vender, então eu devo selecionar um dia anterior que maximize p(n) - p(i) para algum i < n.
+
+(2) Se o dia n não foi escolhido para vender, então eu devo escolher um dia i < n para vender e em seguida escolher um dia j < i que maximize p(i) - p(j).
+
+
+Seja OPT(n) o maior valor possível de p(j) - p(i) , onde i < j <=n.
+
+e Seja min(n) o menor dos preços p(i) onde i<n.
+
+Então
+
+OPT(n) = p(n) - min(n) se n foi escolhido para ser vendido.
+
+ou 
+
+OPT(n) = OPT(n-1) se n não foi escolhido para ser vendido.
+
+
+
+max_venda(n)
+
+    if( n == 1 ) 
+        return 0
+    else
+        return max(p(n)-min(n),OPT(n-1))
+
+
+max_venda(n,Min,p) //Min == Min[i] representa o indice do menor elemento de todos os elementos 1 até i-1 , p, p(i) representa o preço do estoque no dia i
+    
+    M <-- Array de n elementos
+    M[1] = 0;
+    primeiro = 0
+    segundo  = 0
+    a = 0
+    b = 0
+
+    for i indo de 2 até n
+        primeiro = p[i]-p[Min[i]]
+        segundo = M[i-1]
+        if( primeiro > segundo )
+            M[i] = primeiro
+            b = i
+            a = Min[i]
+        else if(segundo > primeiro) 
+            M[i] = segundo
+        else
+            M[i] = 0
+        end if
+    end for
+
+    Escreva(Solução: Comprar no dia a e vender no dia b)
+
+end max_venda
+             
+            
+    
+
+
+
+
+
+Ex:
+
+n=5, p(1) = 5, p(2) = 1, p(3) = 7, p(4) = 2, p(5) = 3
+
+seja d(i,j) = p(j) - p(i) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

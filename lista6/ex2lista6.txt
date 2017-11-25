@@ -1,0 +1,23 @@
+Francisco Wallacy Coutinho Braz 15/0059329
+Iasmin Santos Mendes 14/0041940
+
+a) |week1|week2|week3|week4|
+l  |  10 |  1  | 10  |  10 |
+h  |  5  | 50  | 100 |  1  |
+
+Neste dado exemplo, seria escolhido o high da week 2, cujo valor é 50. Como você já escolheu o high da week 2 a week 3 seria ignorada. Porém ao fazer essa escolha, o algoritmo não iria selecionar a escolha ótima que seria a low da week1, nenhum da week 2 e finalmente a high da week 3 e low da week 4.
+
+b) O algoritmo que resulta na solução ótima para esse problema nasce das seguintes premissas:
+
+Se em dada semana n for escolhido o trabalho high, então na semana anterior não haverá trabalho nenhum. E portanto o problema será reduzido ao valor desse trabalho high mais a solução ótima porém das n-2 semanas anteriores. Já no caso de na semana n for escolhido o trabalho low, basta somar esse valor a solução ótimoa para as n-1 semanas.
+
+Algoritmo:
+
+receita_maxima(n) // Maxima receita que pode ser obtida durantes n semanas
+
+    se n for igual a 1
+        retorne o max(h(n),l(n))
+    caso contrário
+        retorne o máximo entre h(n) + receita_maxima(n-2) e l(n) + receita_maxima(n-1)
+
+
