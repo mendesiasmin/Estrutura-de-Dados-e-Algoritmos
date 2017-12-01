@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Map</h1>
+
+<% cities = indexed_graph %>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <% index = 0 %>
+      <% cities.each do |city| %>
+        <th><%= cities.key index %></th>
+        <% index += 1 %>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% cities.each do |city| %>
+      <tr>
+        <th><%= cities.key index %></th>
+        <% row(city, @graph).each do |column| %>
+          <% if column == 0 %>
+            <td></td>
+          <% else %>
+            <td><%= column %></td>
+          <% end  %>
+        <% end %>
+        <% index += 1 %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
