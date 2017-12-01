@@ -1,7 +1,7 @@
 class MapController < ApplicationController
 
   def index
-    generate_graph
+    @cities = City.all.order("name")
   end
 
   def dijkstra
@@ -14,6 +14,7 @@ class MapController < ApplicationController
     p hash_data
 
     origin = City.find(origin_id).name
+    @origin = origin
     actual_city = origin
     hash_data[actual_city] = {origin: actual_city, distance: 0, visited: true, city: actual_city }
     for index in 0..City.count
@@ -48,6 +49,12 @@ class MapController < ApplicationController
     p "a"*80
     p hash_data
     p "a"*80
+
+    @result = hash_data
+
+    respond_to do |format|
+      format.html
+    end
 
   end
 

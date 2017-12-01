@@ -1,0 +1,33 @@
+<h1>Caulate Distances: <%= @origin.to_s %></h1>
+<table style="text-align:center">
+  <thead>
+    <tr>
+      <th>City</th>
+      <th>Origin</th>
+      <th> Distance</th>
+    </tr>
+  </thead>
+
+  <tbody-->
+    <% @result.each do |r| %>
+      <% hash = r[1] %>
+      <tr>
+        <td><%= r[0] %></td>
+        <% if hash != -1 %>
+          <% hash.each do |key, value| %>
+            <% if key.to_s == "origin" || key.to_s == "distance" %>
+              <td><%= value.to_s %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+          <% end %>
+        <% else %>
+          <td></td>
+          <td></td>
+        <% end %>
+      </tr>
+    <% end %>
+      <tr>
+  </tbody>
+</table>
+
